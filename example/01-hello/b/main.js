@@ -18,7 +18,7 @@ function createWindow () {
   }))
 
   // Open the DevTools.
-  win.webContents.openDevTools()
+  win.webContents.openDevTools() // 自動開啟開發人員工具
 
   // Emitted when the window is closed.
   win.on('closed', () => {
