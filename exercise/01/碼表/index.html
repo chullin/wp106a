@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+input { width:30px }      
+    </style>
+  </head>
+  <body>
+<script>
+  var counter = 10
+  var state = 'init'
+
+  function showCounter() {
+    var counterLable = document.getElementById('counter')
+
+    counterLable.innerText = counter
+    if (state === 'start') counter -- 
+    if (counter >= 0 )
+      setTimeout(showCounter, 1000)
+    else {
+      document.getElementById('message').innerText = "Time's Up!"
+      counter = 10
+      counterLable.innerText = counter
+    }
+  }
+
+  function toggle() {
+    if (state === 'init') {
+      setTimeout(showCounter, 1000)
+      state = 'start'
+    } else {
+      stateToggle()
+    } 
+    document.getElementById('toggle').innerText = (state ==='stop')?'start':'stop'
+  }
+
+  function stateToggle() {
+    state = (state === 'stop')?'start':'stop'
+  }
+</script>    
+    <center>
+      <br><br>
+      <lable id='counter'>10</lable><br><Br>
+        <button id='toggle' onclick='toggle()'>start</button><br>
+        <lable id='message'></lable>
+    </center>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+input { width:30px }      
+    </style>
+  </head>
+  <body>
+<script>
+  var counter = 0
+
+  function showCounter() {
+    counter = counter + 0.1
+    document.getElementById('counter').innerText = counter
+    setTimeout("showCounter()", 100)
+    
+  }
+  function start() {
+    showCounter()
+  }
+
+  function showCounte() {
+    counter = counter -0.1
+    document.getElementById('counter').innerText = counter
+    setTimeout("showCounte()", 100)  
+  }
+  function stop() {
+    showCounte()
+  }
+
+
+</script>    
+    <center>
+      <br><br>
+      <font size='300px'><lable id='counter'>0</lable><br><Br></font>
+        <button id='start' onclick='start()'>start</button>
+        <button id='stop' onclick='stop()'>stop</button><br>
+    </center>
+  </body>
+</html>
